@@ -1,8 +1,1 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I used geolocation to obtain the user's location upon clicking the 'Use your location' button. When clicking on the map, the latitude and longitude are set in the URL, and the map position is adjusted accordingly, also opening the form. Every state that requires time has a loading spinner. I created a hook for URL position, which searches for parameters from the URL and sets the latitude and longitude accordingly. When the form is open, clicking on the date implements the Datepicker package. Upon clicking 'Add', a fetch request is made to a fake API, which adds a new city to the list of cities and also redirects back to the URL 'app/cities'.
