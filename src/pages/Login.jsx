@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import PageNav from "../components/PageNav.jsx";
-import { useAuth } from "../contexts/AuthContext.js";
+import { useAuth } from "../contexts/AuthContext.jsx";
 import Button from "../components/Button.jsx";
 
 export default function Login() {
