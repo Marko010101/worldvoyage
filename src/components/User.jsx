@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./User.module.css";
-import { useAuth } from "./contexts/FakeAuthContxt.jsx";
+import { useAuth } from "./contexts/AuthContext.jsx";
 
 function User() {
   const { logout, user } = useAuth();
@@ -11,13 +10,28 @@ function User() {
     logout();
     navigate("/");
   }
+  const fakeAvatar = "https://i.pravatar.cc/100";
+
+  // From the email, convert to the part before '@', and if there is any number at the end of it, deleting it.
+  function handleUsernameConvert(email) {
+    const parts = email.split("@");
+    let username = parts[0];
+
+    if (username.includes(".")) {
+      username = username.replace(/\./g, " ");
+    }
+
+    username = username.replace(/\d+$/, "");
+
+    return username;
+  }
 
   return (
     <div className={styles.user}>
       {user && (
         <>
-          <img src={user.avatar} alt={user.name} />
-          <span>Welcome, {user.name}</span>
+          <img src={fakeAvatar} alt={user.name} />
+          <span>Welcome, {handleUsernameConvert(user.email)}</span>
           <button onClick={handleClick}>Logout</button>
         </>
       )}
@@ -26,13 +40,3 @@ function User() {
 }
 
 export default User;
-
-/*
-CHALLENGE
-
-1) Add `AuthProvider` to `App.jsx`
-2) In the `Login.jsx` page, call `login()` from context
-3) Inside an effect, check whether `isAuthenticated === true`. If so, programatically navigate to `/app`
-4) In `User.js`, read and display logged in user from context (`user` object). Then include this component in `AppLayout.js`
-5) Handle logout button by calling `logout()` and navigating back to `/`
-*/

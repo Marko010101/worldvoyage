@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import styles from "./Login.module.css";
+import styles from "./login.module.css";
 import PageNav from "../components/PageNav.jsx";
 import { useAuth } from "../components/contexts/AuthContext.jsx";
 import Button from "../components/Button.jsx";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
-  // PRE-FILL FOR DEV PURPOSES
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, isAuthenticated, error, resetError } = useAuth();
+  const { register, isAuthenticated, error, resetError } = useAuth();
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (email && password) login(email, password);
+    register(email, password);
   }
 
   useEffect(
     function () {
-      if (isAuthenticated) return navigate("/app", { replace: true });
+      if (isAuthenticated) return navigate("/login", { replace: true });
     },
     [isAuthenticated, navigate]
   );
@@ -35,7 +34,7 @@ export default function Login() {
   return (
     <main className={styles.login}>
       <PageNav />
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
           <input
@@ -52,16 +51,14 @@ export default function Login() {
           <input
             type="password"
             id="password"
-            placeholder="**********"
+            placeholder="*********"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
         </div>
 
         <div>
-          <Button type="primary" onClick={handleSubmit}>
-            Login
-          </Button>
+          <Button type="primary">Register</Button>
         </div>
         {error && <p>{error}</p>}
       </form>

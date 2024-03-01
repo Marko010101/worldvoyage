@@ -15,6 +15,12 @@
   color: var(--color-dark--1);
 }
 
+.primaryDark {
+  font-weight: 700;
+  background-color: var(--color-brand--3);
+  color: var(--color-dark--1);
+}
+
 .back {
   font-weight: 600;
   background: none;
