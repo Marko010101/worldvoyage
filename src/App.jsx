@@ -12,7 +12,7 @@ import CountryList from "./components/CountryList.jsx";
 import City from "./components/City.jsx";
 import Form from "./components/Form.jsx";
 import { CitiesProvider } from "./contexts/CitiesContext.jsx";
-import { AuthProvider } from "./contexts/AuthContext.js";
+import { AuthProvider } from "./contexts/AuthContext.jsx";
 import ProtectedRoute from "./pages/ProtectedRoute.jsx";
 
 function App() {
