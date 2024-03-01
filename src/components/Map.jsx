@@ -8,7 +8,7 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
-import { useCities, flagemojiToPNG } from "./contexts/CitiesContext.jsx";
+import { useCities, flagemojiToPNG } from "../contexts/CitiesContext.jsx";
 import { useEffect, useState } from "react";
 import { useGeolocation } from "../hooks/useGeoLocation.js";
 import Button from "./Button.jsx";

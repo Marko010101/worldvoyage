@@ -11,8 +11,8 @@ import CityList from "./components/CityList.jsx";
 import CountryList from "./components/CountryList.jsx";
 import City from "./components/City.jsx";
 import Form from "./components/Form.jsx";
-import { CitiesProvider } from "./components/contexts/CitiesContext.jsx";
-import { AuthProvider } from "./components/contexts/AuthContext.jsx";
+import { CitiesProvider } from "./contexts/CitiesContext.jsx";
+import { AuthProvider } from "./contexts/AuthContext.js";
 import ProtectedRoute from "./pages/ProtectedRoute.jsx";
 
 function App() {

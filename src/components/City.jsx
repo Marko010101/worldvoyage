@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 import { useEffect } from "react";
-import { flagemojiToPNG, useCities } from "./contexts/CitiesContext.jsx";
+import { flagemojiToPNG, useCities } from "../contexts/CitiesContext.jsx";
 import Spinner from "./Spinner.jsx";
 import BackButton from "./BackButton.jsx";
 

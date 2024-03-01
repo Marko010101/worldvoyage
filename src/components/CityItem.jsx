@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./CityItem.module.css";
-import { flagemojiToPNG, useCities } from "./contexts/CitiesContext.jsx";
+import { flagemojiToPNG, useCities } from "../contexts/CitiesContext.jsx";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {

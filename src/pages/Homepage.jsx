@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
 import PageNav from "../components/PageNav.jsx";
-import { useAuth } from "../components/contexts/AuthContext.jsx";
+import { useAuth } from "../contexts/AuthContext.js";
 
 export default function Homepage() {
   const { isAuthenticated } = useAuth();

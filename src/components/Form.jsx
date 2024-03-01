@@ -8,7 +8,7 @@ import styles from "./Form.module.css";
 import Button from "./Button.jsx";
 import BackButton from "./BackButton.jsx";
 import { useUrlPosition } from "../hooks/useUrlPosition.js";
-import { flagemojiToPNG, useCities } from "./contexts/CitiesContext.jsx";
+import { flagemojiToPNG, useCities } from "../contexts/CitiesContext.jsx";
 import Message from "./Message.jsx";
 import Spinner from "./Spinner.jsx";
 import { useGeolocation } from "../hooks/useGeoLocation.js";
