@@ -20,16 +20,19 @@ import SpinnerFullPage from "./components/SpinnerFullPage.jsx";
 // import PageNotFound from "./pages/PageNotFound.jsx";
 
 const Homepage = lazy(() => import("./pages/Homepage.jsx"));
-const Product = lazy(() => import("./pages/product.jsx"));
-const Pricing = lazy(() => import("./pages/pricing.jsx"));
-const Login = lazy(() => import("./pages/login.jsx"));
-const Register = lazy(() => import("./pages/register.jsx"));
+const Product = lazy(() => import("./pages/Product.jsx"));
+const Pricing = lazy(() => import("./pages/Pricing.jsx"));
+const Login = lazy(() => import("./pages/Login.jsx"));
+const Register = lazy(() => import("./pages/Register.jsx"));
 const AppLayout = lazy(() => import("./pages/AppLayout.jsx"));
 const PageNotFound = lazy(() => import("./pages/Homepage.jsx"));
 
 /* 
+before spliting code
 dist/assets/index-fded45fe.css   30.01 kB │ gzip:   5.08 kB
 dist/assets/index-13c5b008.js   677.15 kB │ gzip: 180.87 kB
+after spliting
+dist/assets/index-69bc466c.js   517.83 kB │ gzip: 134.13 kB
  */
 
 function App() {
