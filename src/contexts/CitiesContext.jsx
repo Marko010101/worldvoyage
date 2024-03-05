@@ -1,4 +1,10 @@
-import { createContext, useEffect, useContext, useReducer } from "react";
+import {
+  createContext,
+  useEffect,
+  useContext,
+  useReducer,
+  useCallback,
+} from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const CitiesContext = createContext();
@@ -65,11 +71,14 @@ function CitiesProvider({ children }) {
     }
   }, []);
 
-  const getCity = (id) => {
-    const storedCities = JSON.parse(localStorage.getItem("cities")) || [];
-    const city = storedCities.find((city) => city.id === id.toString());
-    dispatch({ type: "city/loaded", payload: city });
-  };
+  const getCity = useCallback(
+    function getCity(id) {
+      const storedCities = JSON.parse(localStorage.getItem("cities")) || [];
+      const city = storedCities.find((city) => city.id === id.toString());
+      dispatch({ type: "city/loaded", payload: city });
+    },
+    [dispatch]
+  );
 
   const createCity = (newCity) => {
     const storedCities = JSON.parse(localStorage.getItem("cities")) || [];
