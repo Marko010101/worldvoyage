@@ -25,7 +25,7 @@ const Pricing = lazy(() => import("./pages/Pricing.jsx"));
 const Login = lazy(() => import("./pages/Login.jsx"));
 const Register = lazy(() => import("./pages/Register.jsx"));
 const AppLayout = lazy(() => import("./pages/AppLayout.jsx"));
-const PageNotFound = lazy(() => import("./pages/Homepage.jsx"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound.jsx"));
 
 /* 
 before spliting code
