@@ -13,7 +13,11 @@ In this project, users can register and log in using Firebase authentication. Re
 - **Geolocation**: Users can obtain their location by clicking the 'Use your location' button.
 - **URL Position Handling**: The application adjusts the map position based on latitude and longitude parameters in the URL.
 - **Datepicker Integration**: When the form is open, users can select dates using the Datepicker package.
-- **Fake API Interaction**: Upon clicking 'Add', a fetch request is made to a fake API to add a new city to the list.
+- **localStorage**: Upon clicking 'Add', the city is added to the city list object, which is then saved in localStorage.
+
+## Lazy Loading
+
+Lazy loading is implemented to optimize the loading of components, resulting in decreased initial loading time and improved user experience.
 
 ## Project Structure
 
